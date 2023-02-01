@@ -8,6 +8,7 @@ import { ProductItemDetailComponent } from './products/product-item-detail/produ
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { CartComponent } from './cart/cart.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ProductItemDetailComponent,
     OrderConfirmationComponent,
     CartComponent,
-    NavBarComponent
+    NavBarComponent,
+    CheckoutFormComponent
   ],
   imports: [
     BrowserModule
