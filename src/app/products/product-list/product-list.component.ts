@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductModule as Product } from './../../models/product/product.module';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,7 +10,13 @@ import { ProductModule as Product } from './../../models/product/product.module'
 export class ProductListComponent {
   products: Product[] = [];
 
-  constructor(){}
+  constructor(private productService: ProductService){}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe(data => {
+      this.products = data;
+    })
+  }
+
+
 }

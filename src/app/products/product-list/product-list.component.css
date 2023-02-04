@@ -2,11 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1024px;
+    max-width: 1000px;
     margin-bottom: 64px;
   }
 
-  .product-container {
+  .products {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }

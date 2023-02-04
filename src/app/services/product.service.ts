@@ -7,6 +7,7 @@ import { ProductModule as Product } from '../models/product/product.module';
   providedIn: 'root'
 })
 export class ProductService {
+  product: Product = new Product;
 
   constructor(private http: HttpClient) { }
 
