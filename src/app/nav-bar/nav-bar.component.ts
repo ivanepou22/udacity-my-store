@@ -12,7 +12,6 @@ export class NavBarComponent {
    constructor(private cartService: CartService){
     this.cartService.getCart().subscribe(cart =>{
       this.itemsTotal = cart.length;
-      console.log(cart)
     })
    }
 }

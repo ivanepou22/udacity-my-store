@@ -1,1 +1,20 @@
-<p>cart works!</p>
+<div class="cart">
+<div class="cart-details">
+    <div class="cart-info">
+        <div class="item-detail" *ngFor="let item of items">
+            <img src="{{item.url}}" alt="">
+            <div class="item-info">
+                <h4 class="item-name">{{item.name}}</h4>
+                <p class="item-price">${{item.price}}</p>
+                <form>
+                    Amt: <input class="form-control number-input" minlength="1" value="{{item.quantity}}" type="number"/>
+                </form>
+                <p class="sub-total">SubTotal: ${{item.totalAmount}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="checkout-info">
+        <app-checkout-form></app-checkout-form>
+    </div>
+</div>
+</div>

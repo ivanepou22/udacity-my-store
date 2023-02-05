@@ -1,0 +1,40 @@
+.checkout-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+    font-family: roboto;
+}
+
+.checkout-detail {
+    width: 100%;
+    padding: 1em;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-control {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    width: 100%;
+    font-size: 0.8em;
+    border-radius: 5px;
+}
+
+.button {
+    align-self: start;
+    border-radius: 5px;
+}

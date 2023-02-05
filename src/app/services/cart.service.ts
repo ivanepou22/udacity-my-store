@@ -29,6 +29,15 @@ export class CartService {
   }
 
   getTotal(): number {
-    return this.items.reduce((sum, item) => sum + item.price, 0);
+    return this.items.reduce((sum, item) => sum + (item?.totalAmount || 0), 0);
+  }
+
+  getItems(): CartModule[] {
+    return this.items
+  }
+
+  clearCart() {
+    this.items = [];
+    this.cart.next(this.items);
   }
 }
