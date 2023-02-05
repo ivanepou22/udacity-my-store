@@ -8,6 +8,7 @@
   margin: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   width: 300px;
+  font-family: roboto;
 }
 
 .product-image {
@@ -20,7 +21,7 @@
 
 p {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 10px;
 }
 
