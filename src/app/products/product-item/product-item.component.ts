@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ProductModule } from './../../models/product/product.module';
+import { CartModule } from 'src/app/models/cart/cart.module';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -8,8 +10,9 @@ import { ProductModule } from './../../models/product/product.module';
 })
 export class ProductItemComponent {
   @Input() product: ProductModule;
+  quantity: number = 1;
 
-  constructor() {
+  constructor(private cartService: CartService) {
     this.product = {
       id: 1,
       name: '',
@@ -17,5 +20,11 @@ export class ProductItemComponent {
       url: '',
       description: '',
     };
+  }
+
+  addToCart(cart: CartModule) {
+    cart.quantity = this.quantity
+    cart.totalAmount = this.quantity * cart.price
+    this.cartService.addToCart(cart);
   }
 }
