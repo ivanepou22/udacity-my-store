@@ -47,10 +47,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
+  font-size: 0.9em;
   border-radius: 50%;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.3em;
+  height: 1.3em;
   position: absolute;
   left: 25px;
   top: -5px;
