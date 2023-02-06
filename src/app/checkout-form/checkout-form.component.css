@@ -38,3 +38,7 @@ form {
     align-self: start;
     border-radius: 5px;
 }
+
+form div {
+    width: 100%;
+  }

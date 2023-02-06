@@ -15,5 +15,14 @@ export class CartComponent {
 
   removeFromCart(item: CartModule) {
     this.cartService.removeFromCart(item);
+    this.orderTotal = this.cartService.getTotal();
+  }
+
+  updateQuantity(qty: number, item: CartModule) {
+    if(qty === 0) {
+      this.removeFromCart(item);
+    }
+    this.cartService.updateCartInformation(this.items);
+    this.orderTotal = this.cartService.getTotal();
   }
 }

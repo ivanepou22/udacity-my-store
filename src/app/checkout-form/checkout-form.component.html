@@ -2,35 +2,50 @@
   <div class="checkout-detail">
     <div class="user-info">
       <form (ngSubmit)="formSubmit()" #form="ngForm">
+        <div class="full-name">
+          <span>Full Name</span>
+          <input
+            type="text"
+            name="name"
+            minlength="3"
+            required="required"
+            placeholder="(minimum 3 characters)"
+            class="form-control"
+            [(ngModel)]="name"
+          />
+        </div>
+        <div class="address-info">
+          <span>Address</span>
+          <input
+            type="text"
+            name="address"
+            minlength="6"
+            placeholder="(minimum 6 characters)"
+            class="form-control"
+            required="required"
+            [(ngModel)]="address"
+          />
+        </div>
+        <div class="card_no">
+          <span>Credit Card Number</span>
+          <input
+            type="text"
+            name="card_number"
+            minlength="16"
+            maxlength="16"
+            placeholder="(16-digit-number)"
+            class="form-control"
+            required="required"
+            [(ngModel)]="card_number"
+          />
+        </div>
+
         <input
-          type="text"
-          name="name"
-          minlength="3"
-          required="required"
-          placeholder="(minimum 3 characters)"
-          class="form-control"
-          [(ngModel)]="name"
+          type="submit"
+          [disabled]="form.invalid"
+          value="Submit Order"
+          class="mr-10 mt-10 pt-2 flex-none h-10 w-full px-6 font-bold rounded-md bg-black text-white button"
         />
-        <input
-          type="text"
-          name="address"
-          minlength="6"
-          placeholder="(minimum 6 characters)"
-          class="form-control"
-          required="required"
-          [(ngModel)]="address"
-        />
-        <input
-          type="text"
-          name="card_number"
-          minlength="16"
-          maxlength="16"
-          placeholder="(16-digit-number)"
-          class="form-control"
-          required="required"
-          [(ngModel)]="card_number"
-        />
-        <input type="submit" [disabled]="form.invalid" value="Submit Order" class="mr-10 mt-10 pt-2 flex-none h-10 w-full px-6 font-bold rounded-md bg-black text-white button" />
       </form>
     </div>
   </div>

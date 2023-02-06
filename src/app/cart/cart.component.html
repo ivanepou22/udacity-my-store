@@ -1,20 +1,40 @@
+<div class="container">
 <div class="cart">
-<div class="cart-details">
+  <div class="cart-details">
     <div class="cart-info">
-        <div class="item-detail" *ngFor="let item of items">
-            <img src="{{item.url}}" alt="">
-            <div class="item-info">
-                <h4 class="item-name">{{item.name}}</h4>
-                <p class="item-price">${{item.price}}</p>
-                <form>
-                    Amt: <input class="form-control number-input" minlength="1" value="{{item.quantity}}" type="number"/>
-                </form>
-                <p class="sub-total">SubTotal: ${{item.totalAmount}}</p>
-            </div>
+      <div class="item-detail" *ngFor="let item of items; let index = index">
+        <img src="{{ item.url }}" alt="" />
+        <div class="item-info">
+          <h4 class="item-name">{{ item.name }}</h4>
+          <p class="item-price">${{ item.price }}</p>
+          <form>
+            Amt:
+            <input
+              class="form-control number-input"
+              [ariaValueMin]="1"
+              name="quantity{{ index }}"
+              [(ngModel)]="items[index].quantity"
+              (ngModelChange)="updateQuantity($event, item)"
+              type="number"
+            />
+          </form>
+          <p class="sub-total">SubTotal: ${{ item.totalAmount?.toFixed(2) }}</p>
         </div>
+        <input
+          type="button"
+          value="Remove"
+          class="btn btn-danger"
+          (click)="removeFromCart(item)"
+        />
+      </div>
     </div>
     <div class="checkout-info">
-        <app-checkout-form></app-checkout-form>
+      <div class="total-amount">
+        <span>Total Amount</span>
+        <span>${{ orderTotal.toFixed(2) }}</span>
+      </div>
+      <app-checkout-form></app-checkout-form>
     </div>
+  </div>
 </div>
 </div>

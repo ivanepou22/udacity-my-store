@@ -36,6 +36,9 @@ export class CartService {
     return this.items
   }
 
+  updateCartInformation(items: CartModule[]) {
+    items.map(item => { item.totalAmount = item.quantity ? item.quantity * item.price : 0; return item })
+  }
   clearCart() {
     this.items = [];
     this.cart.next(this.items);
