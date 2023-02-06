@@ -1,6 +1,6 @@
 <div class="container">
 <div class="cart">
-  <div class="cart-details">
+  <div class="cart-details" *ngIf="orderTotal !== 0" >
     <div class="cart-info">
       <div class="item-detail" *ngFor="let item of items; let index = index">
         <img src="{{ item.url }}" alt="" />
@@ -35,6 +35,17 @@
       </div>
       <app-checkout-form></app-checkout-form>
     </div>
+  </div>
+  <div class="empty-cart-message" *ngIf="orderTotal === 0">
+        <div class="cart-message">
+            <span>Your Cart is empty add more items to the cart</span>
+            <p class="text-center pt-2">
+                <a routerLink="" class="btn btn-secondary">
+                  <span aria-hidden="true"> &larr;</span>
+                  Back To Shopping
+                </a>
+              </p>
+        </div>
   </div>
 </div>
 </div>
