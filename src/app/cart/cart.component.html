@@ -11,6 +11,8 @@
               Amt:
               <input
                 class="form-control number-input"
+                required
+                min="0"
                 [ariaValueMin]="1"
                 name="quantity{{ index }}"
                 [(ngModel)]="items[index].quantity"
@@ -33,17 +35,17 @@
       <div class="checkout-info">
         <div class="total-amount">
           <div class="order-total">
-            <span>Total:</span>
+            <span class="span-total">Total:</span>
             <span>${{ orderTotal.toFixed(2) }}</span>
           </div>
           <div class="btn-back">
             <a routerLink="" class="btn btn-secondary">
               <span aria-hidden="true"> &larr;</span>
-              Products
+              Continue Shopping
             </a>
           </div>
         </div>
-        <app-checkout-form></app-checkout-form>
+        <app-checkout-form [orderTotal]="orderTotal"></app-checkout-form>
       </div>
     </div>
     <div class="empty-cart-message" *ngIf="orderTotal === 0">

@@ -21,7 +21,7 @@ export class CheckoutFormComponent {
       name: this.name,
       address: this.address,
       card_number: this.card_number,
-      order_total: this.order_total,
+      order_total: this.orderTotal,
     };
 
     //clear the form
@@ -31,5 +31,8 @@ export class CheckoutFormComponent {
 
     //clear cart
     this.cartService.clearCart();
+
+    //navigate to order confirmation page
+    this.router.navigate(['/order-confirmation'], { queryParams: { user_name: order.name, order_total: this.orderTotal } });
   }
 }

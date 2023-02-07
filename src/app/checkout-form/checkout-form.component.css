@@ -48,3 +48,10 @@ form div {
     color: grey;
     font-style: italic;
   }
+
+  .input-error {
+    font-size: 0.8em;
+    font-style: italic;
+    color: rgb(196, 47, 47);
+    padding: 2px;
+  }
