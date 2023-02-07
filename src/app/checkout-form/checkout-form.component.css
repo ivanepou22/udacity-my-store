@@ -42,3 +42,9 @@ form {
 form div {
     width: 100%;
   }
+
+  .client-note {
+    font-size: .8em;
+    color: grey;
+    font-style: italic;
+  }

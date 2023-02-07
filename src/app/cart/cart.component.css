@@ -124,15 +124,37 @@ form {
 
 .total-amount {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 12px;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   gap: 15px;
-  background-color: #E91E63;
-  border-radius: 5px;
+
   color: #fff;
   font-weight: 500;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #E91E63;
+  border-radius: 5px;
+}
+
+.cart-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-message p {
+  padding: 10px;
+}
+.total-amount {
+
+  gap: 10px;
 }
 
 
