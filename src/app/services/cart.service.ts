@@ -12,8 +12,17 @@ export class CartService {
   constructor() { }
 
   addToCart(product: CartModule) {
-    this.items.push(product);
+    const existingProduct = this.items.find(item => item.id === product.id);
+    if (!existingProduct) {
+      this.items.push(product);
+    } else {
+      if(existingProduct.quantity !== undefined){
+      existingProduct.quantity += product.quantity || 0;
+      existingProduct.totalAmount = existingProduct.quantity * existingProduct.price;
+    }
+    }
     this.cart.next(this.items);
+    alert('Item added to the Cart.');
   }
 
   removeFromCart(product: CartModule) {
@@ -21,6 +30,7 @@ export class CartService {
     if (index > -1) {
       this.items.splice(index, 1);
       this.cart.next(this.items);
+      alert('Item removed from the Cart.');
     }
   }
 
